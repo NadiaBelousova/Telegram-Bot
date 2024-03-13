@@ -47,7 +47,7 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
     public int process(List<Update> updates) {
         updates.forEach(update -> {
             logger.info("Processing update: {}", update);
-            String greetingMessage = "Hello! How can I help you?";
+            String greetingMessage = "Hello! Do you want to create a new task? Please, enter your task in right format: dd.MM.yyyy HH:mm text message";
             Long chatId = update.message().chat().id();
             Pattern pattern = Pattern.compile("([0-9\\.\\:\\s]{16})(\\s)([\\W+]+)");
             Matcher matcher = pattern.matcher(update.message().text());
